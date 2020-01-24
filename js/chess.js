@@ -194,7 +194,7 @@ var Chess = function(fen) {
             else if (is_digit(piece))
                 square += parseInt(piece, 10);
             else {
-                var color = (piece < 'a') ? BLACK : WHITE;
+                var color = (piece < 'a') ? WHITE : BLACK;
                 put({type: piece.toLowerCase(), color: color}, algebraic(square));
                 
                 square++;
