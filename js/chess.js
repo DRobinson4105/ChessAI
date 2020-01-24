@@ -11,7 +11,6 @@ var Chess = function(fen) {
     var ROOK = 'r';
     var QUEEN = 'q';
     var KING = 'k';
-    var promotingPiece = parseInt($('#pawn-promotion-choice').find(':selected').text());
 
     var SYMBOLS = 'pnbrqkPNBRQK';
 
