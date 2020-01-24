@@ -37,44 +37,69 @@ var minimax = function (depth, game, alpha, beta, isMaximisingPlayer) {
   if (depth === 0) {
     return -evaluateBoard(game.board());
   }
+  
   var newGameMoves = game.moves();
+  
   if (isMaximisingPlayer) {
+    
     var bestMove = -9999;
+    
     for (var i = 0; i < newGameMoves.length; i++) {
+      
       game.move(newGameMoves[i]);
       bestMove = Math.max(bestMove, minimax(depth - 1, game, alpha, beta, !isMaximisingPlayer));
+      
       game.undo();
       alpha = Math.max(alpha, bestMove);
+      
       if (beta <= alpha) {
         return bestMove;
       }
+      
     }
+    
     return bestMove;
+    
   } else {
+    
     var bestMove = 9999;
+    
     for (var i = 0; i < newGameMoves.length; i++) {
+      
       game.move(newGameMoves[i]);
       bestMove = Math.min(bestMove, minimax(depth - 1, game, alpha, beta, !isMaximisingPlayer));
+      
       game.undo();
       beta = Math.min(beta, bestMove);
+      
       if (beta <= alpha) {
         return bestMove;
       }
+      
     }
+    
   return bestMove;
+  
   }
+
 };
 
+// Look at where all of the pieces are+
 var evaluateBoard = function (board) {
+  
   var totalEvaluation = 0;
+  
   for (var i = 0; i < 8; i++) {
     for (var j = 0; j < 8; j++) {
       totalEvaluation = totalEvaluation + getPieceValue(board[i][j], i, j);
     }
   }
+  
   return totalEvaluation;
+  
 };
 
+// Reverse Array
 var reverseArray = function (array) {
   return array.slice().reverse();
 };
