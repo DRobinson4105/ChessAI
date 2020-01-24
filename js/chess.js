@@ -11,7 +11,6 @@ var Chess = function(fen) {
     var ROOK = 'r';
     var QUEEN = 'q';
     var KING = 'k';
-    var promotingPiece = parseInt($('#pawn-promotion-choice').find(':selected').text());
 
     var SYMBOLS = 'pnbrqkPNBRQK';
 
@@ -135,7 +134,7 @@ var Chess = function(fen) {
 
     var board = new Array(128);
     var kings = {w: EMPTY, b: EMPTY};
-    var turn = WHITE;
+    var turn = BLACK;
     var castling = {w: 0, b: 0};
     var ep_square = EMPTY;
     var half_moves = 0;
