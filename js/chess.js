@@ -154,7 +154,7 @@ var Chess = function(fen) {
 
         board = new Array(128);
         kings = {w: EMPTY, b: EMPTY};
-        turn = WHITE;
+        turn = BLACK;
         castling = {w: 0, b: 0};
         ep_square = EMPTY;
         half_moves = 0;
@@ -194,7 +194,7 @@ var Chess = function(fen) {
             else if (is_digit(piece))
                 square += parseInt(piece, 10);
             else {
-                var color = (piece < 'a') ? WHITE : BLACK;
+                var color = (piece < 'a') ? BLACK : WHITE;
                 put({type: piece.toLowerCase(), color: color}, algebraic(square));
                 
                 square++;
