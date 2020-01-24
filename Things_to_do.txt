@@ -1,0 +1,9 @@
+Things to do:
+a) Undo Button
+b) Redo Button
+c) Reset Board
+d) Best Move (requires f)
+e) Threats (requires f)
+f) White AI
+g) Option for White to be AI (requires f)
+h) Option for Black to be AI
