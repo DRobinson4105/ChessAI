@@ -1,5 +1,7 @@
+// Board
 var board, game = new Chess();
 
+// Minimax Best Move
 var minimaxRoot = function (depth, game, isMaximisingPlayer) {
 
   var newGameMoves = game.moves();
@@ -7,20 +9,31 @@ var minimaxRoot = function (depth, game, isMaximisingPlayer) {
   var bestMoveFound;
   
     for (var i = 0; i < newGameMoves.length; i++) {
+      
       var newGameMove = newGameMoves[i]
       game.move(newGameMove);
+      
       var value = minimax(depth - 1, game, -10000, 10000, !isMaximisingPlayer);
       game.undo();
+      
       if (value >= bestMove) {
+        
         bestMove = value;
         bestMoveFound = newGameMove;
+        
       }
+      
   }
+  
   return bestMoveFound;
+  
 };
 
+// Minimax Function
 var minimax = function (depth, game, alpha, beta, isMaximisingPlayer) {
+  
   positionCount++;
+  
   if (depth === 0) {
     return -evaluateBoard(game.board());
   }
@@ -147,17 +160,17 @@ var getPieceValue = function (piece, x, y) {
   }
   var getAbsoluteValue = function (piece, isWhite, x, y) {
     if (piece.type === 'p') {
-      return 10 + (isWhite ? pawnEvalWhite[y][x] : pawnEvalBlack[y][x]);
-    } else if (piece.type === 'r') {
-      return 50 + (isWhite ? rookEvalWhite[y][x] : rookEvalBlack[y][x]);
+      return 100 + (isWhite ? pawnEvalWhite[y][x] : pawnEvalBlack[y][x]);
     } else if (piece.type === 'n') {
-      return 30 + knightEval[y][x];
+      return 300 + knightEval[y][x];
     } else if (piece.type === 'b') {
-      return 30 + (isWhite ? bishopEvalWhite[y][x] : bishopEvalBlack[y][x]);
+      return 300 + (isWhite ? bishopEvalWhite[y][x] : bishopEvalBlack[y][x]);
+    } else if (piece.type === 'r') {
+      return 500 + (isWhite ? rookEvalWhite[y][x] : rookEvalBlack[y][x]);
     } else if (piece.type === 'q') {
-      return 90 + evalQueen[y][x];
+      return 900 + evalQueen[y][x];
     } else if (piece.type === 'k') {
-      return 900 + (isWhite ? kingEvalWhite[y][x] : kingEvalBlack[y][x]);
+      return 9000 + (isWhite ? kingEvalWhite[y][x] : kingEvalBlack[y][x]);
     }
       throw "Unknown piece type: " + piece.type;
   };
