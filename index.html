@@ -1,45 +1,25 @@
-<html lang="en">
-    
+<html>
     <head>
-        
         <meta charset="UTF-8">
-        
-        <title>Chess AI</title>
-        
-        <link rel="stylesheet" href="css/chessboard.css">
-        
-        <link rel="stylesheet" href="css/style.css">
-    
+        <title>Chess AI</title>        
+        <link rel="stylesheet" href="css/chessboard.css">      
+        <link rel="stylesheet" href="css/style.css"> 
     </head>
     
     <style>
-        
-        h1, h2, h3, h4, h5, h6 {
-            
-            font-weight: normal;
-        
-        }
-    
+        h1, h2, h3, h4, h5, h6 {        
+            font-weight: normal;       
+        }  
     </style>
    
-    <body>
-        
-        <div class = "title">
-            
-            <h1>Chess AI</h1>
-        
-        </div>
-        
-        <div id="board" class="board"></div>
-        
-        <div class="info">
-                          
-            <div class="loading">
-                
-                <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-        
-            </div>
-            
+    <body>       
+        <div class = "title">            
+            <h1>Chess AI</h1>       
+        </div>        
+        <div id="board" class="board"></div>        
+        <div class="info">                        
+            <div class="loading">               
+            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>           
             <select id="help-menu">
                 
                 <option value= "1">Select one</option>
@@ -49,28 +29,21 @@
             
             </select>
             
-            <button id = "help-button" onclick = "alert('gay')">Submit</button>
-            
-            <p></p>
-            
-            <script>
-                
-                var help = function() {
-                    
-                    if(document.getElementById("help-menu").value == 0) {
-                        
-                        alert('Gay');
-                    
-                    }
-                
-                }
-            
+            <button id = "help-button" onclick = "alert('gay')">Submit</button>            
+            <p></p>           
+            <script>                
+                var help = function() {                    
+                    if(document.getElementById("help-menu").value == 0) {                       
+                        alert('Gay');                    
+                    }                
+                }           
             </script>
             
-            <button id = "redo-button">Redo</button>
-            
-            <p>Difficulty</p>         
-            
+            <div>
+            <button id = "undo-button">undo</button>
+            <button id = "redo-button">undo</button>
+            </div>
+            <p>Difficulty</p>                    
             <select id="search-depth">
             
                 <option value= "1">1</option>
@@ -79,10 +52,8 @@
                 <option value= "4">4</option>
                 <option value= "5">5</option>
             
-            </select>
-                
-            <p>Pawn Promotion Choice</p>
-            
+            </select>               
+            <p>Pawn Promotion Choice</p>            
             <select id="pawn-promotion-choice">
                 
                 <option value= 'n'>Knight</option>
@@ -90,27 +61,18 @@
                 <option value= 'r'>Rook</option>
                 <option value= 'q' selected>Queen</option>
                 
-            </select>
-            
-            <div id="chessboard"></div>
-            
-            <p class="status"></p>
-            
-            <span>Positions Evaluated: <span id="position-count"></span></span>
-            
-            <br>
-            
-            <br>
-            
+            </select>            
+            <div id="chessboard"></div>            
+            <p class="status"></p>            
+            <span>Positions Evaluated: <span id="position-count"></span></span>            
+            <br>            
+            <br>            
             <div id="move-history" class="move-history"></div>
        
-        </div>
-       
+        </div>       
         <script src="js/jquery.js"></script>
         <script src="js/chess.js"></script>
         <script src="js/chessboard.js"></script>
-        <script src="js/script.js"></script>
-    
+        <script src="js/script.js"></script>   
     </body>
-
 </html>
