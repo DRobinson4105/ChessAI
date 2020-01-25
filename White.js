@@ -1,2 +1,3 @@
-var = new board
+var = new board2
+
 
