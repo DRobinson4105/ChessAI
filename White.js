@@ -1,3 +1,0 @@
-var = new board2
-
-
