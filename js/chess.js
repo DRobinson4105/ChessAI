@@ -141,7 +141,6 @@ var Chess = function(fen) {
     var move_number = 1;
     var history = [];
     var header = {};
-game.setTurn("b");
     if (typeof fen === 'undefined')
         load(DEFAULT_POSITION);
     else
@@ -1178,6 +1177,8 @@ game.setTurn("b");
 setTurn: function(newTurn) {
     turn = newTurn;
 },
+      
+game.setTurn("b");
     WHITE: WHITE,
     BLACK: BLACK,
     PAWN: PAWN,
