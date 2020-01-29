@@ -134,7 +134,7 @@ var Chess = function(fen) {
 
     var board = new Array(128);
     var kings = {w: EMPTY, b: EMPTY};
-    var turn = BLACK;
+    var turn = "b";
     var castling = {w: 0, b: 0};
     var ep_square = EMPTY;
     var half_moves = 0;
@@ -153,7 +153,7 @@ var Chess = function(fen) {
 
         board = new Array(128);
         kings = {w: EMPTY, b: EMPTY};
-        turn = BLACK;
+        turn = "b";
         castling = {w: 0, b: 0};
         ep_square = EMPTY;
         half_moves = 0;
@@ -1171,14 +1171,6 @@ var Chess = function(fen) {
     /***************************************************************************
      * PUBLIC CONSTANTS (is there a better way to do this?)
      **************************************************************************/
-    turn: function() {
-   return turn;
-},
-setTurn: function(newTurn) {
-    turn = newTurn;
-},
-      
-game.setTurn("b");
     WHITE: WHITE,
     BLACK: BLACK,
     PAWN: PAWN,
