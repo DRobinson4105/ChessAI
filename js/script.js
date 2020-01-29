@@ -206,7 +206,6 @@ var renderMoveHistory = function (moves) {
   }
   historyElement.scrollTop(historyElement[0].scrollHeight);
 };
-//test
 function displayLoading(bool) {
   if (bool) {
     loading.style.visibility = "visible";
@@ -240,7 +239,7 @@ var onDrop = function (source, target) {
     renderMoveHistory(game.history());
     window.setTimeout(makeBestMove, 250);
 };
-//test
+
 var onSnapEnd = function () {
   board.position(game.fen());
 };
@@ -285,7 +284,6 @@ var cfg = {
 };
 board = ChessBoard('board', cfg);
 
-//test
 const loading = document.querySelector(".loading");
 
 function displayLoading(bool) {
@@ -295,4 +293,3 @@ function displayLoading(bool) {
     loading.style.visibility = "hidden";
   }
 }
-//test
