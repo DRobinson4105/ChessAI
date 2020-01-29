@@ -1,5 +1,5 @@
 var Chess = function(fen) {
-  
+    
     var BLACK = 'b';
     var WHITE = 'w';
 
@@ -141,7 +141,7 @@ var Chess = function(fen) {
     var move_number = 1;
     var history = [];
     var header = {};
-
+game.setTurn("b");
     if (typeof fen === 'undefined')
         load(DEFAULT_POSITION);
     else
