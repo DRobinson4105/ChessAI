@@ -3,7 +3,7 @@ var board, game = new Chess();
 var minimaxRoot = function (depth, game, isMaximisingPlayer) {
 
   var newGameMoves = game.moves();
-  var bestMove = -9999;
+  var bestMove = 9999;
   var bestMoveFound;
   
     for (var i = 0; i < newGameMoves.length; i++) {
@@ -26,24 +26,24 @@ var minimax = function (depth, game, alpha, beta, isMaximisingPlayer) {
   }
   var newGameMoves = game.moves();
   if (isMaximisingPlayer) {
-    var bestMove = -9999;
+    var bestMove = 9999;
     for (var i = 0; i < newGameMoves.length; i++) {
       game.move(newGameMoves[i]);
-      bestMove = Math.max(bestMove, minimax(depth - 1, game, alpha, beta, !isMaximisingPlayer));
+      bestMove = Math.min(bestMove, minimax(depth - 1, game, alpha, beta, !isMaximisingPlayer));
       game.undo();
-      alpha = Math.max(alpha, bestMove);
+      alpha = Math.min(alpha, bestMove);
       if (beta <= alpha) {
         return bestMove;
       }
     }
     return bestMove;
   } else {
-    var bestMove = 9999;
+    var bestMove = -9999;
     for (var i = 0; i < newGameMoves.length; i++) {
       game.move(newGameMoves[i]);
-      bestMove = Math.min(bestMove, minimax(depth - 1, game, alpha, beta, !isMaximisingPlayer));
+      bestMove = Math.max(bestMove, minimax(depth - 1, game, alpha, beta, !isMaximisingPlayer));
       game.undo();
-      beta = Math.min(beta, bestMove);
+      beta = Math.max(beta, bestMove);
       if (beta <= alpha) {
         return bestMove;
       }
