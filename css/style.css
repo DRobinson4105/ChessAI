@@ -42,23 +42,6 @@ body {
 
 }
 
-
-.control-row {
-    
-    display: flex;
-    position: absolute;
-    transform: translate(450px, -200px);
-}
-
-.control-row-left {
-    align-self: center;
-}
-
-.control-row-right {
-    flex-grow: 1;
-    text-align: right;
-    transform: translate(10px, 0px);
-}
 .loading {
 
     visibility: hidden;
