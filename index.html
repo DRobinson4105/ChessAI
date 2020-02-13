@@ -21,22 +21,7 @@
         }
     
     </style>
-   <div class="control-row">
-    
-    <div class="control-row-left">Difficulty: 
-    </div>
-    <div class="control-row-right">
-        <select id="search-depth">
-            
-            <option value= "1">1</option>
-            <option value= "2">2</option>
-            <option value= "3" selected>3</option>
-            <option value= "4">4</option>
-            <option value= "5">5</option>
-        
-        </select>
-    </div>
-</div>
+
     <body>
         
         <div class = "title">
@@ -54,44 +39,22 @@
                 <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
         
             </div>
-
-            <span id="time"></span>
-            
-            <select id="help-menu">
-                
-                <option value= "1" selected>Select one</option>
-                <option value= "2">Best move</option>
-                <option value= "3">Hints</option>
-                <option value= "4">Threats</option>
-            
-            </select>
-            
-            <button onclick = "help()">Submit</button>
-            
-            <script>
-                
-                function help() {
-                    
-                    if(document.getElementById("help-menu").value == "1") {
-                    
-                        alert('This is not an option');
-                    
-                    } else if(document.getElementById("help-menu").value == "2") {
-                        // alert(x)
-
-                    }
-                    
-                
-                }
-
-            </script>
-
-
-
-            
-            <button id = "undo-button">Undo</button>       
             
             <p>Pawn Promotion Choice</p>
+
+            <span id="time"></span>
+          
+            <p>Pawn Promotion Choice</p>
+            
+            <select id="search-depth">
+            
+                <option value= "1">1</option>
+                <option value= "2">2</option>
+                <option value= "3" selected>3</option>
+                <option value= "4">4</option>
+                <option value= "5">5</option>
+        
+            </select>
             
             <select id="pawn-promotion-choice">
                 
